@@ -1,41 +1,38 @@
+#region Step 1: Configuration Setup
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
+#endregion Step 1: Configuration Setup
+    
+#region Step2: Service Registration
+#region Step2.1: Add services to the DI container.
+builder.Services.AddControllers();
+// Addd Swagger services.
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+#endregion Step2.1: Add services to the DI container.
+    
+#region Step2.2: Add database context
+    
+#endregion Step2.2: Add database context
+#endregion Step2: Service Registration
+    
+#region Step3: Build the application
 var app = builder.Build();
+#endregion Step3: Build the application
 
-// Configure the HTTP request pipeline.
+#region Step4: Middleware Pipeline Configuration
+#region Step4.1: Configure the HTTP request pipeline.
+app.UseHttpsRedirection();
+app.MapControllers();
+    
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+    
+#endregion Step4.1: Configure the HTTP request pipeline.
+#endregion Step4: Middleware Pipeline Configuration
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast");
-
+#region Step5: Start the Application
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+#endregion Step5: Start the Application
