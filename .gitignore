@@ -1,0 +1,106 @@
+# ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Build results
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+*.cache
+*.ilk
+*.lib
+*.ndk
+*.map
+*.mdb
+*.obj
+*.idb
+*.tlog
+*.log
+*.vspscc
+*.vssscc
+
+# DotNet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Environment variables
+.env
+.env.*
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Publish output
+wwwroot/
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# User-specific files
+*.ruser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+# DotNet specific
+*.swp
+*.swpx
+*.tmp
+*.temp
+*.pidb
+*.booproj
+*.svd
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+*.testsettings
+*.vsmdi
+*.trx
+TestResults/
+
+# Azure
+.localhistory/
+*.publishsettings
+*.azurePubxml
+*.azurePubxml.user
+
+# Rider
+.idea/
+idea_modules/
+
