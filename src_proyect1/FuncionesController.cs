@@ -4,7 +4,7 @@ namespace DemoMinimalApi;
 
 [ApiController]
 [Route("[controller]")]
-public class SaludarController: ControllerBase
+public class FuncionesController: ControllerBase
 {
     // ENDPOINTS
     
