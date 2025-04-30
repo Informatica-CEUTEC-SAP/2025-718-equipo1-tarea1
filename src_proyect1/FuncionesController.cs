@@ -126,6 +126,12 @@ public class FuncionesController : ControllerBase
         if (evento == null)
             return NotFound();
 
+        
+        if (evento.Participantes.Any(p => p.DNI == participante.DNI))
+        {
+            return BadRequest("El DNI del participante ya está registrado en este evento.");
+        }
+
         evento.Participantes.Add(participante);
         return Ok(participante);
     }
