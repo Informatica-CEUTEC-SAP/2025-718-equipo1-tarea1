@@ -24,11 +24,14 @@ public class FuncionesController : ControllerBase
         new Evento
         {
             Id = 2,
-            Nombre = "Feria de Libros",
+            Nombre = "Partidos de Futbol",
             Ciudad = "Barcelona",
-            Categoria = "Cultura",
-            Fecha = new DateTime(2025, 06, 15),
+            Categoria = "Deporte",
+            Fecha = new DateTime(2025, 06, 20),
             Participantes = new List<Participante>()
+            {
+                new Participante { DNI = "10505C", Nombre = "Carlos Cruz", Email = "carlos@example.com" }
+            }
         }
     };
 
