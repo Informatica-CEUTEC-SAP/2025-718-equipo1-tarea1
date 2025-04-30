@@ -29,6 +29,9 @@ public class FuncionesController : ControllerBase
             Categoria = "Deporte",
             Fecha = new DateTime(2025, 06, 20),
             Participantes = new List<Participante>()
+            {
+                new Participante { DNI = "10505C", Nombre = "Carlos Cruz", Email = "carlos@example.com" }
+            }
         }
     };
 
